@@ -1,1 +1,4 @@
 selenium==4.16.0 # to manipulate website
+
+# user: admincw
+# pass: cw2023
