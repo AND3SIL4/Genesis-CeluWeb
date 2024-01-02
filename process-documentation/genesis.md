@@ -299,7 +299,7 @@ Pasos:
 - Una vez se hayan editado los datos del nuevo cliente, seleccionar la opcion de guardar
 
 ### Configuración de la impresora
-Pasos
+Pasos:
 - Ir a procesos
 - Selecciona la opción de configuración de impresora
 - Luego la opción de definir impresora
