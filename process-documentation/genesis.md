@@ -1,7 +1,14 @@
-# Índice 
+# Portal del Conocimiento: Videos Genesis
+<p align="center">
+  <img src="https://superricas.celuwebcloud.com/web/Styles/images/logo_genesis.png" alt="Logo genesis">
+</p>
 
-- [Índice](#índice)
-- [Portal del conocimiento videos Genesis](#portal-del-conocimiento-videos-genesis)
+Documento basado en el "Portal del Conocimiento: Videos Genesis", fuente esencial para comprender y aprovechar al máximo las funcionalidades del software Genesis. Este recurso detallado te guiará a través de procesos clave, desde la realización de respaldos hasta la configuración de impresoras, proporcionándote la información necesaria para optimizar tu experiencia en el manejo y rutero con Genesis. Descubrir soluciones efectivas para registrar ventas, gestionar formas de pago, realizar cambios, generar reportes y mucho más. 
+
+## Índice 
+
+- [Portal del Conocimiento: Videos Genesis](#portal-del-conocimiento-videos-genesis)
+  - [Índice](#índice)
     - [Backup intranet antigua](#backup-intranet-antigua)
     - [Clico del manejo y rutero](#clico-del-manejo-y-rutero)
       - [Actividades obligatorias del ciclo](#actividades-obligatorias-del-ciclo)
@@ -12,12 +19,9 @@
     - [Cobros autoventa](#cobros-autoventa)
     - [Reportes autoventa](#reportes-autoventa)
     - [Cargue sugerido](#cargue-sugerido)
+    - [Creación de cliente nuevo](#creación-de-cliente-nuevo)
+    - [Configuración de la impresora](#configuración-de-la-impresora)
 
- 
-
- 
-
-# Portal del conocimiento videos Genesis 
 
 ### Backup intranet antigua 
 
@@ -62,8 +66,6 @@
 ¿Qué es el rutero? 
 
 - Permite visualizar la totalidad de los clientes, secuenciados de 5 en 5, permite dar orden, dirección y facilidad en la visita, sin desordenar a los clientes 
-
--  
 
 ### Proceso de registro de venta 
 
@@ -287,4 +289,22 @@ Consultar el cuadre de caja
 
 - Hacer clic en enviar 
 
- 
+### Creación de cliente nuevo
+
+Todo cliente nuevo es aquel cliente que nos compró por primera vez y hay que hacerle la creación para que pueda aparecer en el rutero y así poder registrar su compra
+
+Pasos:
+- Ingresar a la opción que dice cliente nuevo
+- Editar los espacion en blancos requeridos con la información del nuevo cliente
+- Una vez se hayan editado los datos del nuevo cliente, seleccionar la opcion de guardar
+
+### Configuración de la impresora
+Pasos
+- Ir a procesos
+- Selecciona la opción de configuración de impresora
+- Luego la opción de definir impresora
+- El dispositivo empezará a buscar todas las impresoras disponibles por via bluetooth 
+- Selecciona la impresora y dar clic en aceptar
+- El sistema solicitará un pin el cual será 0000 (cuatro ceros)
+- Clic en aceptar
+
