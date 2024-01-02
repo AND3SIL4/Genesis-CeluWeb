@@ -6,10 +6,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import pandas as pd
-
 import os
-
 import time
+
 # Configuración de Selenium
 driver = webdriver.Chrome()
 
@@ -30,11 +29,9 @@ input_contrasena = driver.find_element(By.NAME, 'txtClave')
 input_contrasena.send_keys(contrasena)
 input_contrasena.send_keys(Keys.RETURN)
 
-# Esperar a que la página cargue (ajusta el tiempo según sea necesario)
-
 
 # Ahora puedes interactuar con la página web para obtener información
-# Por ejemplo, puedes buscar elementos y extraer texto
+# Buscar elementos y extraer texto
 elemento_informacion = driver.find_element(By.ID, 'ctl00_lblNombre')
 informacion = elemento_informacion.text
 
@@ -60,21 +57,41 @@ campo_busqueda.send_keys('20723')
 boton_busqueda = driver.find_element(By.ID, 'ctl00_ContentPlaceHolder1_btnFiltrar')
 boton_busqueda.click()
 
+time.sleep(2)
+
 # Localizar la tabla (ajusta según el código fuente de la página)
 tabla_locator = (By.XPATH, '//table[@id="ctl00_ContentPlaceHolder1_gvDatos"]')
 tabla = wait.until(EC.presence_of_element_located(tabla_locator))
 
-print(tabla.text)
-
 # Obtiene el HTML de la tabla
 tabla_html = tabla.get_attribute('outerHTML')
 
-# Lee la tabla con Pandas
+# # Lee la tabla con Pandas
 df_tabla = pd.read_html(tabla_html)[0]
 
-df =  pd.DataFrame(df_tabla)
+# Saber nombre de las columnas
+print(df_tabla.columns)
 
-time.sleep(10)
+# Selecciona solo las columnas 'Columna1' y 'Columna2'
+df_seleccionado = df_tabla[[
+    'CodDistribuidora', 
+    'CodVendedor', 
+    'NumResolucion', 
+    'ConsecutivoActual', 
+    'LimiteInferior',
+    'LimiteSuperior' ,
+    'Fecha Inicio Resolución',
+    'Fecha Fin Resolución',
+    'Prefijo',
+    'Prefijo NC',
+    'Consecutivo Actual NC', 
+    'Limite Inferior NC',
+    'LimiteSuperiorNc',
+    'Fecha Creación'
+    ]]
+print(df_seleccionado)
+
+df =  pd.DataFrame(df_seleccionado)
 
 # Cerrar el navegador al finalizar
 driver.quit()
@@ -86,4 +103,4 @@ df.to_excel('tabla_datos.xlsx', index=False)
 directorio_trabajo = os.getcwd()
 
 # Imprimir la ubicación del archivo Excel
-print(f"El archivo Excel se guardó en: {directorio_trabajo}")
+print(f"El archivo Excel se guardó en: { directorio_trabajo }")
