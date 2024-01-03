@@ -57,7 +57,7 @@ campo_busqueda.send_keys('20723')
 boton_busqueda = driver.find_element(By.ID, 'ctl00_ContentPlaceHolder1_btnFiltrar')
 boton_busqueda.click()
 
-time.sleep(2)
+time.sleep(3)
 
 # Localizar la tabla (ajusta según el código fuente de la página)
 tabla_locator = (By.XPATH, '//table[@id="ctl00_ContentPlaceHolder1_gvDatos"]')
