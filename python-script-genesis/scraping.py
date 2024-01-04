@@ -59,14 +59,6 @@ segunda_option.click()
 # Obtencion de ID's para iteracion
 lista_datos = []
 
-lista = [
-    '22660',
-    '22569',
-    '79104',
-    '62011',
-    '61822',
-]
-
 try:
     # Leer archivo excel 
     df = pd.read_excel('datos/data.xlsx')
@@ -94,9 +86,13 @@ except FileExistsError as fne:
 except PermissionError as p:
     print(p.strerror)
 
+# Para probar con fraciones de la cantidad de datos en total
+indice_medio = len(lista_datos)  // 1
+mitad_datos = lista_datos[:indice_medio]
+
 data_frame = pd.DataFrame()
 
-for id in lista_datos:
+for iteration, id in  enumerate(mitad_datos, start=1) :
     # Localizar el campo de entrada (input) y enviar un valor
     campo_busqueda = driver.find_element(By.ID, 'ctl00_ContentPlaceHolder1_txtBusqueda')
     # Introducir ID's
@@ -109,7 +105,7 @@ for id in lista_datos:
     # driver.execute_script("arguments[0].click();", boton_busqueda)
 
     
-    time.sleep(5)
+    time.sleep(6)
     
     # Localizar la tabla (ajusta según el código fuente de la página)
     tabla_locator = (By.XPATH, '//table[@id="ctl00_ContentPlaceHolder1_gvDatos"]')
@@ -129,7 +125,7 @@ for id in lista_datos:
     boton_busqueda.click()
     # driver.execute_script("arguments[0].click();", boton_busqueda)
     
-    time.sleep(5)
+    time.sleep(6)
 
     # Selecciona solo las columnas 'Columna1' y 'Columna2'
     df_seleccionado = df_tabla[[
@@ -153,19 +149,22 @@ for id in lista_datos:
 
     data_frame = pd.concat([data_frame, df_temp])
 
+    print(df_temp)
+    print(f'Extracciones completadas: {iteration} de {len(mitad_datos)} totales id: {id}')
+
 # Cerrar el navegador al finalizar
 driver.quit()
 
 # Manejo de archivo excel
 try:
     # Exportar a un archivo Excel
-    data_frame.to_excel('tabla_datos.xlsx', index=False)
+    data_frame.to_excel('datos/documeto_cruce.xlsx', index=False)
 
     # Obtener el directorio de trabajo actual
     directorio_trabajo = os.getcwd()
 
     # Imprimir la ubicación del archivo Excel
-    print(f"📥 El archivo Excel se guardó en: { directorio_trabajo } 📥")
+    print(f"🍀 El archivo Excel se guardó en: { directorio_trabajo } en carpeta 'datos' 🍀")
 
 except PermissionError as permission:
     print(permission.strerror)

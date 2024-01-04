@@ -16,7 +16,8 @@ try:
     for prueba in df_sin_duplicados:
         lista_datos.append(prueba)
 
-    print(lista_datos)
+    print(f'Datos completos')
+    print(f'{lista_datos}')
 
     # Mensaje informativo
     print(f'Longitud normal de la columna: { len(columna) }')
@@ -33,3 +34,13 @@ except PermissionError as p:
     print('Permiso denegado, por favor cierre todos los archivos e intente de nuevo')
 finally:
     print('La preparación de datos terminó')
+
+# Indice medio
+indice_medio = len(lista_datos) // 2
+print(indice_medio)
+
+# Mitad de datos
+mitad = lista_datos[:indice_medio]
+
+print('Mitad de datos')
+print(mitad)
