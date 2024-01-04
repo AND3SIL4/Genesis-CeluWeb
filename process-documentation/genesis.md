@@ -5,10 +5,7 @@
 
 Documento basado en el "Portal del Conocimiento: Videos Genesis", fuente esencial para comprender y aprovechar al máximo las funcionalidades del software Genesis. Este recurso detallado te guiará a través de procesos clave, desde la realización de respaldos hasta la configuración de impresoras, proporcionándote la información necesaria para optimizar tu experiencia en el manejo y rutero con Genesis. Descubrir soluciones efectivas para registrar ventas, gestionar formas de pago, realizar cambios, generar reportes y mucho más. 
 
-## Índice 
-
 - [Portal del Conocimiento: Videos Genesis](#portal-del-conocimiento-videos-genesis)
-  - [Índice](#índice)
     - [Backup intranet antigua](#backup-intranet-antigua)
     - [Clico del manejo y rutero](#clico-del-manejo-y-rutero)
       - [Actividades obligatorias del ciclo](#actividades-obligatorias-del-ciclo)

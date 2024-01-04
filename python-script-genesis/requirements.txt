@@ -4,6 +4,7 @@ openpyxl==3.1.2
 lxml==4.9.4
 bs4==0.0.1
 requests==2.31.0
+pyinstaller==6.3.0
 
 # user: admincw
 # pass: cw2023

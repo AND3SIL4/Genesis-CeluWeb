@@ -4,7 +4,7 @@ lista_datos = []
 
 try:
     # Leer archivo excel 
-    df = pd.read_excel('datos/data.xlsx')
+    df = pd.read_excel('datos/database.xlsx')
 
     # Separar solo la columna objetivo
     columna = df['Vendedor']
