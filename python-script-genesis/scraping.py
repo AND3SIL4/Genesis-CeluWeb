@@ -61,7 +61,7 @@ lista_datos = []
 
 try:
     # Leer archivo excel 
-    df = pd.read_excel('datos/database.xlsx')
+    df = pd.read_excel('datos/data.xlsx')
 
     # Separar solo la columna objetivo
     columna = df['Vendedor']
@@ -105,7 +105,7 @@ for iteration, id in  enumerate(mitad_datos, start=1) :
     # driver.execute_script("arguments[0].click();", boton_busqueda)
 
     
-    time.sleep(8)
+    time.sleep(6)
     
     # Localizar la tabla (ajusta según el código fuente de la página)
     tabla_locator = (By.XPATH, '//table[@id="ctl00_ContentPlaceHolder1_gvDatos"]')
@@ -125,7 +125,7 @@ for iteration, id in  enumerate(mitad_datos, start=1) :
     boton_busqueda.click()
     # driver.execute_script("arguments[0].click();", boton_busqueda)
     
-    time.sleep(5)
+    time.sleep(6)
 
     # Selecciona solo las columnas 'Columna1' y 'Columna2'
     df_seleccionado = df_tabla[[
