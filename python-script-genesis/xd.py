@@ -118,7 +118,7 @@ def main():
             lista_datos.append(prueba)
 
          # Para probar con fracciones de la cantidad de datos en total
-        indice_medio = len(lista_datos)  // 5
+        indice_medio = len(lista_datos)  // 1
         mitad_datos = lista_datos[:indice_medio]
 
         data_frame = pd.DataFrame()
@@ -139,7 +139,7 @@ def main():
     # Manejo de archivo excel
     try:
         # Exportar a un archivo Excel
-        data_frame.to_excel('datos/documeto_cruce.xlsx', index=False)
+        data_frame.to_excel('datos/documento_cruce.xlsx', index=False)
 
         # Obtener el directorio de trabajo actual
         directorio_trabajo = os.getcwd()
@@ -147,19 +147,7 @@ def main():
         # Imprimir la ubicación del archivo Excel
         print(f"🍀 El archivo Excel se guardó en: { directorio_trabajo } en carpeta 'datos' 🍀")
 
-    except PermissionError as permission:
-        print(permission.strerror)
-        print("No tienes permiso para escribir en este archivo.")
-    except FileNotFoundError as file:
-        print(file.strerror)
-        print("El archivo o la ruta del archivo no existen.")
-    except IsADirectoryError as isDirectory:
-        print(isDirectory.strerror)
-        print("Se esperaba un archivo, pero se proporcionó un directorio.")
-    except OSError as os:
-        print(os.strerror)
-        print("Hubo un error relacionado con el sistema operativo.")
-    except pd.errors.ExcelWriteError:
+    except pd.errors.PandasExcelWriterError:
         print("Hubo un error al usar ExcelWriter.")
     except ValueError as val:
         print(val)
@@ -167,6 +155,8 @@ def main():
     except TimeoutException as time_out:
         print(time_out)
         print("Se proporcionaron argumentos con valores incorrectos.")
+    except Exception as e:
+        print(f"Otro error inesperado: {e}")
 
     hora_fin = time.time()
 

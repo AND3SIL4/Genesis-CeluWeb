@@ -158,7 +158,7 @@ driver.quit()
 # Manejo de archivo excel
 try:
     # Exportar a un archivo Excel
-    data_frame.to_excel('datos/documeto_cruce.xlsx', index=False)
+    data_frame.to_excel('datos/documento_cruce.xlsx', index=False)
 
     # Obtener el directorio de trabajo actual
     directorio_trabajo = os.getcwd()
